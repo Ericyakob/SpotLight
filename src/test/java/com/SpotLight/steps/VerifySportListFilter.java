@@ -7,19 +7,16 @@ import org.junit.Assert;
 public class VerifySportListFilter {
     DashboardPage dashboardPage=new DashboardPage();
     int global_NumberOfEachSportsList;
-    @Then("i should see all the {string}")
-    public void i_should_see_all_the(String sportCategory) {
+    @When("i count each {string}")
+    public void i_count_each(String sportCategory) {
         global_NumberOfEachSportsList=dashboardPage.returnNumberOfEachSportsList(sportCategory);
     }
-
-    @When("i select {string}")
-    public void i_select(String sportCategory) {
-         dashboardPage.selectEachSportCategory(sportCategory);
-
+    @When("i select each {string} on dropdown list")
+    public void i_select_each_on_dropdown_list(String sportCategory) {
+        dashboardPage.selectEachSportCategory(sportCategory);
     }
-
-    @Then("i should only see  Sport List for the selected {string}")
-    public void i_should_only_see_Sport_List_for_the_selected(String sportCategory) {
+    @Then("i compare sorted {string} with counted in previous step")
+    public void i_compare_sorted_with_counted_in_previous_step(String sportCategory) {
         int ActualNumberOfSelectedSportCategory=dashboardPage.returnNumberOfEachSportsList(sportCategory);
         Assert.assertEquals(global_NumberOfEachSportsList,ActualNumberOfSelectedSportCategory);
     }

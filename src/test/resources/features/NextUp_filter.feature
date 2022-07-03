@@ -13,9 +13,9 @@ Feature:Next Up Filter
 
   Scenario Outline: verify number of each available sport list
     Given  i am on home page
-    Then   i should see all the "<sport category>"
-    When   i select "<sport category>"
-    Then   i should only see  Sport List for the selected "<sport category>"
+    When   i count each "<sport category>"
+    And    i select each "<sport category>" on dropdown list
+    Then   i compare sorted "<sport category>" with counted in previous step
     Examples:
     |sport category|
     | MLB        |
