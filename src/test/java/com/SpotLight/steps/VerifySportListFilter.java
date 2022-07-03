@@ -14,7 +14,7 @@ public class VerifySportListFilter {
 
     @When("i select {string}")
     public void i_select(String sportCategory) {
-        dashboardPage.selectEachSportCategory(sportCategory);
+         dashboardPage.selectEachSportCategory(sportCategory);
 
     }
 
