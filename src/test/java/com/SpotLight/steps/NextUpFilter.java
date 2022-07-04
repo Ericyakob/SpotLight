@@ -31,7 +31,7 @@ public class NextUpFilter {
         System.out.println(ActualSportsList);
         System.out.println("Expected Sports List: " + ExpectedSportsList);
         System.out.println("Actual Sports List: " + ActualSportsList);
-        Assert.assertTrue(ExpectedSportsList.contains(ActualSportsList));
+        Assert.assertEquals(ExpectedSportsList,ActualSportsList);
     }
 
 }
